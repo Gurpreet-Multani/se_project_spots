@@ -43,7 +43,18 @@
   color: #212121;
   display: flex;
   gap: 8px;
+  opacity: 70%;
 }
+.profile__edit-btn:hover {
+  margin-top: auto;
+  border: none;
+  background-color: #fcf5e5;
+  color: #212121;
+  display: flex;
+  opacity: 100%;
+  gap: 8px;
+}
+
 .profile__add-btn {
   margin-left: auto;
   background-color: #212121;
@@ -58,6 +69,22 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
+}
+.profile__add-btn:hover {
+  margin-left: auto;
+  background-color: #212121;
+  border-radius: 10px;
+  border-style: hidden;
+  color: #fcf5e5;
+  height: 52px;
+  width: 149px;
+  margin-top: 138px;
+  gap: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  opacity: 80%;
 }
 
 @media screen and (max-width: 627px) {
