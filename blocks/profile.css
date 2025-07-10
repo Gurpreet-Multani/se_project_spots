@@ -47,12 +47,14 @@
 }
 .profile__edit-btn:hover {
   margin-top: auto;
+  appearance: none;
   border: none;
   background-color: #fcf5e5;
   color: #212121;
   display: flex;
-  opacity: 100%;
   gap: 8px;
+  opacity: 100%;
+  cursor: pointer;
 }
 
 .profile__add-btn {
@@ -85,6 +87,7 @@
   justify-content: center;
   gap: 8px;
   opacity: 80%;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 627px) {

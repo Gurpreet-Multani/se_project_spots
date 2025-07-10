@@ -16,26 +16,30 @@
 }
 
 .card__like-btn {
-  background-image: url(../images/heart.svg);
+  background-image: url(../images/Darkheart.svg);
   width: 23px;
   height: 20px;
   border: none;
   background-color: transparent;
-  opacity: 40%;
+  background-size: cover;
+  opacity: 100%;
 }
 .card__like-btn:hover {
-  background-image: url(../images/State=Hover.svg);
+  background-image: url(../images/Darkheart.svg);
   width: 23px;
   height: 20px;
   border: none;
-  color: #212121;
-  opacity: 100%;
+  background-color: transparent;
+  background-size: cover;
+  opacity: 40%;
 }
 
 .card__title {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  margin-bottom: 0;
+  font-size: 20px;
 }
 
 @media screen and (max-width: 627px) {
