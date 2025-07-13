@@ -38,11 +38,6 @@
   background-color: #ffffff;
 }
 
-.modal__close-btn__icon--size {
-  width: 40px;
-  height: 40px;
-}
-
 .modal__title {
   margin: 0 0 32px;
 }
@@ -87,17 +82,30 @@
   .modal__container {
     width: 300px;
     height: 336px;
-    padding: 12px;
     position: absolute;
+    top: 134px;
+    padding: 0px 0 28px;
+  }
+  .modal__form {
+    width: 276px;
+    padding: 0 12px 12px 12px;
   }
   .modal__title {
     font-size: 20px;
     width: 276px;
+    padding-left: 12px;
+  }
+  .modal__label {
+    margin-bottom: 24px;
   }
   .modal__input {
-    width: 276px;
+    width: 260px;
   }
   .modal__submit-btn {
     width: 100%;
+  }
+  .modal__close-btn {
+    position: relative;
+    left: 236px;
   }
 }
