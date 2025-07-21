@@ -1,5 +1,4 @@
-/* New post button doesnt work in Mobile s-320px view unsure how to resolve issue  */
-
+/*added opacity and transition property*/
 .modal {
   visibility: hidden;
   background-color: #00000080;
@@ -12,10 +11,14 @@
   justify-content: center;
   align-items: center;
   padding: 10px;
+  opacity: 0;
+  transition: opacity 0.5s linear;
 }
 
+/*added opacity*/
 .modal_is-opened {
   visibility: visible;
+  opacity: 1;
 }
 
 .modal__container {
@@ -86,7 +89,6 @@
   width: 156px;
   height: 52px;
   background: #212121;
-
   color: #fcf5e5;
 }
 
