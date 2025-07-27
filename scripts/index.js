@@ -48,7 +48,7 @@ const newPostModal = document.querySelector("#new-post-modal");
 const newPostCloseBtn = newPostModal.querySelector(".modal__close-btn");
 //select form and both inputs
 const editPostFormEl = newPostModal.querySelector(".modal__form");
-const editPostNameInput = newPostModal.querySelector("#new-post-modal");
+const editPostNameInput = newPostModal.querySelector("#card-image-input");
 const editPostDescriptionInput = newPostModal.querySelector(
   "#card-caption-input"
 );
