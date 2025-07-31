@@ -11,6 +11,8 @@
 }
 
 .card__delete {
+  cursor: pointer;
+  border-radius: 50%;
   width: 32px;
   height: 32px;
   appearance: none;
@@ -24,8 +26,7 @@
 }
 
 .card__delete:hover {
-  /*change img*/
-  background-image: url(../images/deletebtnhover.svg);
+  background-color: #ff6565;
 }
 
 .card__content {
@@ -35,6 +36,7 @@
 }
 
 .card__like-btn {
+  cursor: pointer;
   background-image: url(../images/Darkheart.svg);
   width: 23px;
   height: 20px;
@@ -54,7 +56,6 @@
 }
 
 .card__like-btn_active:hover {
-  background-image: url(../images/likebtntogglehover.svg);
   opacity: 0.4;
 }
 

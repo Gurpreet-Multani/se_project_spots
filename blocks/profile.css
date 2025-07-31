@@ -36,6 +36,7 @@
   max-width: 288px;
 }
 .profile__edit-btn {
+  cursor: pointer;
   margin-top: auto;
   appearance: none;
   border: none;
@@ -50,6 +51,7 @@
 }
 
 .profile__add-btn {
+  cursor: pointer;
   margin-left: auto;
   background-color: #212121;
   border-radius: 10px;

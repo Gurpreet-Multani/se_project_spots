@@ -30,6 +30,7 @@
 }
 
 .modal__close-btn {
+  cursor: pointer;
   position: absolute;
   top: 32px;
   right: 50px;
@@ -59,6 +60,7 @@
 }
 
 .modal__input {
+  cursor: pointer;
   display: block;
   margin: 8px 0 0;
   border: 1px solid #21212166;
@@ -82,6 +84,7 @@
 }
 
 .modal__submit-btn {
+  cursor: pointer;
   appearance: none;
   border: none;
   border-radius: 8px;
@@ -106,6 +109,7 @@
 }
 
 .modal__close_type_preview {
+  cursor: pointer;
   background-color: none;
   background: none;
   background-image: url(../images/x-iconREG.svg);
@@ -119,16 +123,16 @@
 }
 
 .modal__close_type_preview:hover {
-  background-image: url(../images/x-iconHover.svg);
+  opacity: 40%;
 }
 
 .modal__image {
   max-width: 80vw;
-  max-height: 661px;
+  max-height: 80vh;
   width: 100%;
   object-fit: contain;
   display: block;
-  border-radius: 4px;
+  border-radius: 8px;
 }
 
 .modal__caption {
