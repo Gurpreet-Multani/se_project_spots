@@ -1,5 +1,8 @@
-//Working on arrary here
 const initialCards = [
+  {
+    name: "Golden Gate Bridge",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg",
+  },
   {
     name: "Val Thorens",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/1-photo-by-moritz-feldmann-from-pexels.jpg",
@@ -80,11 +83,6 @@ newPostCloseBtn.addEventListener("click", function () {
   closeModal(newPostModal);
 });
 
-initialCards.forEach(function (cards) {
-  console.log(cards.name);
-  console.log(cards.link);
-});
-
 //Edit Profile adding functionally
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
@@ -103,10 +101,14 @@ editProfileFormEl.addEventListener("submit", handleProfileFormSubmit);
 function handleAddCardSubmit(evt) {
   evt.preventDefault();
 
-  // Log both input values to the console.
+  //spot stage 8
+  const inputValues = {
+    name: editPostDescriptionInput.value,
+    link: editPostNameInput.value,
+  };
 
-  console.log(editPostDescriptionInput.value);
-  console.log(editPostNameInput.value);
+  const cardElement = getCardElement(inputValues);
+  cardList.prepend(cardElement);
 
   // Close the modal.
   closeModal(newPostModal);
@@ -114,3 +116,62 @@ function handleAddCardSubmit(evt) {
 
 // Create the submit listener.
 editPostFormEl.addEventListener("submit", handleAddCardSubmit);
+
+//Spot stage 8
+//working with temp down here
+//------------------------------------------------------------------------------------
+
+//Selected template from html and content/child
+cardTemplate = document
+  .querySelector("#card-template")
+  .content.querySelector(".card");
+
+//Make Get Card Function
+function getCardElement(data) {
+  const cardElement = cardTemplate.cloneNode(true);
+  const cardTitleEl = cardElement.querySelector(".card__title");
+  const cardImageEl = cardElement.querySelector(".card__image");
+
+  cardImageEl.src = data.link;
+  cardImageEl.alt = data.name;
+  cardTitleEl.textContent = data.name;
+
+  const cardLikebtnEl = cardElement.querySelector(".card__like-btn");
+  cardLikebtnEl.addEventListener("click", () => {
+    cardLikebtnEl.classList.toggle("card__like-btn_active");
+  });
+
+  const carddeletebtn = cardElement.querySelector(".card__delete");
+  carddeletebtn.addEventListener("click", function () {
+    carddeletebtn.closest(".card").remove();
+  });
+
+  //preview open
+  cardImageEl.addEventListener("click", function () {
+    previewImageEl.src = data.link;
+    previewImageEl.alt = data.name;
+    previewNameEl.textContent = data.name;
+    openModal(previewModal);
+  });
+
+  return cardElement;
+}
+
+const cardList = document.querySelector(".cards__list");
+
+initialCards.forEach(function (item) {
+  const cardElement = getCardElement(item);
+  cardList.append(cardElement);
+});
+
+const previewModal = document.querySelector("#preview-modal");
+const previewModalCloseBtn = previewModal.querySelector(
+  ".modal__close_type_preview"
+);
+const previewImageEl = previewModal.querySelector(".modal__image");
+const previewNameEl = previewModal.querySelector(".modal__caption");
+
+//Close button
+previewModalCloseBtn.addEventListener("click", function () {
+  closeModal(previewModal);
+});

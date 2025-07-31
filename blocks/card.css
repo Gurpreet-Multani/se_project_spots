@@ -1,4 +1,5 @@
 .card {
+  position: relative;
 }
 
 .card__image {
@@ -7,6 +8,24 @@
   object-fit: cover;
   display: block;
   border-radius: 10px;
+}
+
+.card__delete {
+  width: 32px;
+  height: 32px;
+  appearance: none;
+  border-style: hidden;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  color: none;
+  background-image: url(../images/deletebtn.svg);
+}
+
+.card__delete:hover {
+  /*change img*/
+  background-image: url(../images/deletebtnhover.svg);
 }
 
 .card__content {
@@ -22,16 +41,21 @@
   border: none;
   background-color: transparent;
   background-size: cover;
+  opacity: 40%;
+}
+
+.card__like-btn:hover {
   opacity: 100%;
 }
-.card__like-btn:hover {
-  background-image: url(../images/Darkheart.svg);
-  width: 23px;
-  height: 20px;
-  border: none;
-  background-color: transparent;
-  background-size: cover;
-  opacity: 40%;
+
+.card__like-btn_active {
+  background-image: url(../images/likedbtntoggle.svg);
+  opacity: 1;
+}
+
+.card__like-btn_active:hover {
+  background-image: url(../images/likebtntogglehover.svg);
+  opacity: 0.4;
 }
 
 .card__title {
@@ -40,6 +64,7 @@
   overflow: hidden;
   margin-bottom: 0;
   font-size: 20px;
+  width: 353px;
 }
 
 @media screen and (max-width: 627px) {
