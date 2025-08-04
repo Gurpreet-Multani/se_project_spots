@@ -151,6 +151,12 @@
   max-width: fit-content;
 }
 
+/*Error Message*/
+.modal__error {
+  display: block;
+  color: red; /*change color and font size*/
+}
+
 @media screen and (max-width: 627px) {
   .modal__container {
     padding: 12px;
