@@ -55,10 +55,12 @@
   flex-direction: column;
 }
 
+/*added Margin bottom to 32*/
 .modal__label {
-  margin: 0 0 32px;
+  margin-bottom: 32px;
 }
 
+/*changed Margin bottom to 0*/
 .modal__input {
   cursor: pointer;
   display: block;
@@ -99,7 +101,6 @@
   opacity: 80%;
 }
 
-/*new modal here*/
 .modal__image-container {
   position: relative;
 }
@@ -155,6 +156,15 @@
 .modal__error {
   display: block;
   color: red; /*change color and font size*/
+  margin-top: 8px;
+}
+
+.modal__input_type_error {
+  border: 1px solid rgba(255, 0, 0, 0.6);
+}
+
+.modal__submit-btn_disabled {
+  opacity: 50%;
 }
 
 @media screen and (max-width: 627px) {

@@ -57,6 +57,8 @@ const profileDescription = document.querySelector(".profile__description");
 //New Post Button
 const newPostBtn = document.querySelector(".profile__add-btn");
 const newPostModal = document.querySelector("#new-post-modal");
+//new code added here stage 9
+const cardSubmitBtn = document.querySelector("modal__button");
 const newPostCloseBtn = newPostModal.querySelector(".modal__close-btn");
 //select form and both inputs
 const editPostFormEl = newPostModal.querySelector(".modal__form");
@@ -112,7 +114,8 @@ function handleAddCardSubmit(evt) {
 
   // Close the modal.
   closeModal(newPostModal);
-  event.target.reset();
+  evt.target.reset();
+  //new code spot 9
 }
 
 // Create the submit listener.

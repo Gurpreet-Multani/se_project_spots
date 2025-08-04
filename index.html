@@ -70,30 +70,39 @@
               <input
                 minlength="2"
                 maxlength="40"
-                required
                 id="profile-name-input"
                 type="text"
                 class="modal__input"
                 placeholder="Type your name"
+                required
               />
+              <!-- span tag/error code added -->
+              <span
+                id="profile-name-input-error"
+                class="modal__error"
+                novalidate
+              ></span>
             </label>
-            <!-- span tag/error code added -->
-            <span class="modal__error">ERROR!!!</span>
+
             <label for="profile-description-input" class="modal__label">
               Description
               <!-- required,maxlength  added -->
               <input
                 minlength="2"
                 maxlength="40"
-                required
                 id="profile-description-input"
                 type="text"
                 class="modal__input"
                 placeholder="Describe yourself"
+                required
               />
+              <!-- span tag/error code added -->
+              <span
+                id="profile-description-input-error"
+                class="modal__error"
+                novalidate
+              ></span>
             </label>
-            <!-- span tag/error code added -->
-            <span class="modal__error">ERROR!!!</span>
             <button type="submit" class="modal__submit-btn">Save</button>
           </form>
         </div>
@@ -111,30 +120,38 @@
               Image Link
               <!-- required & url added -->
               <input
-                required
                 id="card-image-input"
                 type="url"
                 class="modal__input"
                 placeholder="Paste a link to the picture"
+                required
               />
+              <!-- span tag/error code added -->
+              <span
+                id="card-image-input-error"
+                class="modal__error"
+                novalidate
+              ></span>
             </label>
-            <!-- span tag/error code added -->
-            <span class="modal__error">ERROR!!!</span>
             <label for="card-caption-input" class="modal__label">
               Caption
               <!-- required & min & max length added -->
               <input
-                required
                 minlength="2"
                 maxlength="30"
                 id="card-caption-input"
                 type="text"
                 class="modal__input"
                 placeholder="Type your caption"
+                required
               />
+              <!-- span tag/error code added -->
+              <span
+                id="card-caption-input-error"
+                class="modal__error"
+                novalidate
+              ></span>
             </label>
-            <!-- span tag/error code added -->
-            <span class="modal__error">ERROR!!!</span>
             <button type="submit" class="modal__submit-btn">Save</button>
           </form>
         </div>
@@ -151,7 +168,6 @@
         </div>
       </div>
     </div>
-
     <script src="./scripts/index.js"></script>
     <script src="./scripts/validation.js"></script>
   </body>
