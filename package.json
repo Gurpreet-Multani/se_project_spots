@@ -1,0 +1,19 @@
+{
+  "name": "se_project_spots",
+  "version": "1.0.0",
+  "description": "An imgage sharing site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gurpreet-Multani/se_project_spots.git"
+  },
+  "author": "Gurpreet Multani",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gurpreet-Multani/se_project_spots/issues"
+  },
+  "homepage": "https://github.com/Gurpreet-Multani/se_project_spots#readme"
+}
