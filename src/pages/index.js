@@ -1,5 +1,9 @@
 import "./index.css";
-import { enableValidation, settings } from "../scripts/validation.js";
+import {
+  enableValidation,
+  settings,
+  resetValidation,
+} from "../scripts/validation.js";
 
 const initialCards = [
   {
@@ -71,6 +75,10 @@ const editPostDescriptionInput = newPostModal.querySelector(
 );
 
 editProfileBtn.addEventListener("click", function () {
+  resetValidation(editProfileFormEl, settings, [
+    editProfileNameInput,
+    editProfileDescriptionInput,
+  ]);
   openModal(editProfileModal);
   editProfileNameInput.value = profileName.textContent;
   editProfileDescriptionInput.value = profileDescription.textContent;
