@@ -1,71 +1,57 @@
-// Declaring a configuration object that contains the
-// necessary classes and selectors.
-const settings = {
+export const settings = {
   formSelector: ".modal__form",
   inputSelector: ".modal__input",
   submitButtonSelector: ".modal__submit-btn",
-  inactiveButtonClass: "modal__button_disabled",
+  inactiveButtonClass: "modal__submit-btn_disabled", // Updated class name to match usage
   inputErrorClass: "modal__input_type_error",
   errorClass: "modal__error_visible",
 };
 
-//declared function:showInputError() method
-const showInputError = (formEl, inputEl, errorMsg) => {
+const showInputError = (formEl, inputEl, errorMsg, config) => {
   const errorMsgID = inputEl.id + "-error";
   const errorMsgEl = formEl.querySelector("#" + errorMsgID);
   if (errorMsgEl) {
     errorMsgEl.textContent = errorMsg;
   }
-  inputEl.classList.add("modal__input_type_error");
+  inputEl.classList.add(config.inputErrorClass);
 };
 
-//declared function:hideInputError() method
-const hideInputError = (formEl, inputEl) => {
+const hideInputError = (formEl, inputEl, config) => {
   const errorMsgID = inputEl.id + "-error";
   const errorMsgEl = formEl.querySelector("#" + errorMsgID);
   if (errorMsgEl) {
     errorMsgEl.textContent = "";
   }
-  inputEl.classList.remove("modal__input_type_error");
+  inputEl.classList.remove(config.inputErrorClass);
 };
 
-// **MISSING FUNCTION ADDED HERE**
-// declared function:hasInvalidInput() method
 const hasInvalidInput = (inputList) => {
   return inputList.some((input) => !input.validity.valid);
 };
 
-// A helper function to enable the button with both JS property and CSS class
-const enableButton = (buttonEl) => {
+const enableButton = (buttonEl, config) => {
   buttonEl.disabled = false;
-  buttonEl.classList.remove("modal__submit-btn_disabled");
+  buttonEl.classList.remove(config.inactiveButtonClass);
 };
 
-// declared function:toggleButtonState() method
-const toggleButtonState = (inputList, buttonEl) => {
+const disableButton = (buttonEl, config) => {
+  buttonEl.disabled = true;
+  buttonEl.classList.add(config.inactiveButtonClass);
+};
+
+const toggleButtonState = (inputList, buttonEl, config) => {
   if (hasInvalidInput(inputList)) {
-    disableButton(buttonEl);
+    disableButton(buttonEl, config);
   } else {
-    // Corrected: Now it calls the function to enable the button and remove the class
-    enableButton(buttonEl);
+    enableButton(buttonEl, config);
   }
 };
 
-//declared function disable button
-const disableButton = (buttonEl) => {
-  //code
-  buttonEl.disabled = true;
-  //add class to buttonel to make it grey
-  //do the css
-  buttonEl.classList.add("modal__submit-btn_disabled");
-};
-
-// declared function:setEventListeners() method
 const setEventListeners = (formEl, config) => {
   const inputList = Array.from(formEl.querySelectorAll(config.inputSelector));
   const buttonElement = formEl.querySelector(config.submitButtonSelector);
 
-  toggleButtonState(inputList, buttonElement, config); // Initial state check
+  toggleButtonState(inputList, buttonElement, config);
 
   inputList.forEach((inputElement) => {
     inputElement.addEventListener("input", function () {
@@ -75,17 +61,15 @@ const setEventListeners = (formEl, config) => {
   });
 };
 
-// declared function:checkInputValidity() method
-const checkInputValidity = (formEl, inputEl) => {
+const checkInputValidity = (formEl, inputEl, config) => {
   if (!inputEl.validity.valid) {
-    showInputError(formEl, inputEl, inputEl.validationMessage);
+    showInputError(formEl, inputEl, inputEl.validationMessage, config);
   } else {
-    hideInputError(formEl, inputEl);
+    hideInputError(formEl, inputEl, config);
   }
 };
 
-// declared function:enableValidation() method
-const enableValidation = (config) => {
+export const enableValidation = (config) => {
   const formList = document.querySelectorAll(config.formSelector);
   formList.forEach((formEl) => {
     setEventListeners(formEl, config);
@@ -93,3 +77,5 @@ const enableValidation = (config) => {
 };
 
 enableValidation(settings);
+
+//only exported settings & enableValidation

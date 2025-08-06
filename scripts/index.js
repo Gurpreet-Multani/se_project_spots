@@ -1,3 +1,5 @@
+import { enableValidation, settings } from "./validation.js";
+
 const initialCards = [
   {
     name: "Golden Gate Bridge",
@@ -57,8 +59,8 @@ const profileDescription = document.querySelector(".profile__description");
 //New Post Button
 const newPostBtn = document.querySelector(".profile__add-btn");
 const newPostModal = document.querySelector("#new-post-modal");
-//new code added here stage 9
-const cardSubmitBtn = document.querySelector("modal__button");
+// new code added here stage 9
+// `cardSubmitBtn` is not used so it was removed to reduce clutter
 const newPostCloseBtn = newPostModal.querySelector(".modal__close-btn");
 //select form and both inputs
 const editPostFormEl = newPostModal.querySelector(".modal__form");
@@ -103,8 +105,9 @@ editProfileFormEl.addEventListener("submit", handleProfileFormSubmit);
 function handleAddCardSubmit(evt) {
   evt.preventDefault();
 
-  //spot stage 8
+  // Spot stage 8
   const inputValues = {
+    // FIXED: Swapped inputs to match the HTML
     name: editPostDescriptionInput.value,
     link: editPostNameInput.value,
   };
@@ -115,7 +118,8 @@ function handleAddCardSubmit(evt) {
   // Close the modal.
   closeModal(newPostModal);
   evt.target.reset();
-  //new code spot 9
+  // Call this after resetting the form to disable the button
+  enableValidation(settings);
 }
 
 // Create the submit listener.
@@ -125,8 +129,8 @@ editPostFormEl.addEventListener("submit", handleAddCardSubmit);
 //working with temp down here
 //------------------------------------------------------------------------------------
 
-//Selected template from html and content/child
-cardTemplate = document
+// FIXED: Added `const` to declare the variable
+const cardTemplate = document
   .querySelector("#card-template")
   .content.querySelector(".card");
 
@@ -179,3 +183,5 @@ const previewNameEl = previewModal.querySelector(".modal__caption");
 previewModalCloseBtn.addEventListener("click", function () {
   closeModal(previewModal);
 });
+
+enableValidation(settings);
