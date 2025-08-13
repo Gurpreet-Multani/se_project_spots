@@ -37,12 +37,35 @@ const initialCards = [
 ];
 
 //New Functions
-function openModal(modal) {
-  modal.classList.add("modal_is-opened");
+// A function to handle closing modals with the Escape key
+function handleEscapeKey(evt) {
+  if (evt.key === "Escape") {
+    const openedModal = document.querySelector(".modal_is-opened");
+    if (openedModal) {
+      closeModal(openedModal);
+    }
+  }
 }
 
+// A function to handle closing modals by clicking the overlay
+function handleOverlayClick(evt) {
+  if (evt.target.classList.contains("modal_is-opened")) {
+    closeModal(evt.target);
+  }
+}
+
+// Function to open the modal
+function openModal(modal) {
+  modal.classList.add("modal_is-opened");
+  document.addEventListener("keydown", handleEscapeKey);
+  modal.addEventListener("click", handleOverlayClick);
+}
+
+// Function to close the modal
 function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
+  document.removeEventListener("keydown", handleEscapeKey);
+  modal.removeEventListener("click", handleOverlayClick);
 }
 
 //Edit Profile Button
@@ -127,7 +150,8 @@ function handleAddCardSubmit(evt) {
   // Close the modal.
   closeModal(newPostModal);
   evt.target.reset();
-  // Call this after resetting the form to disable the button
+
+  // Call the function to disable the button
   enableValidation(settings);
 }
 
