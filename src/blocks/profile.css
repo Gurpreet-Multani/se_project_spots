@@ -171,8 +171,8 @@
     justify-content: center;
     align-items: center;
     border-radius: 6px;
-    left: 100px;
-    top: 50px;
+    top: 52px;
+    left: 52px;
   }
   .Profile__avatar-img {
     opacity: 100%;
@@ -184,5 +184,15 @@
 
   .profile__avatar-btn::after {
     content: "";
+  }
+
+  .profile__avatar-wrapper {
+    max-width: 80px;
+    max-height: 80px;
+  }
+
+  .profile__avatar-container {
+    max-width: 80px;
+    max-height: 80px;
   }
 }
