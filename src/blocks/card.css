@@ -72,4 +72,8 @@
   .card__image {
     height: 288px;
   }
+
+  .card__like-btn {
+    width: 26px;
+  }
 }
