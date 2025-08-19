@@ -127,7 +127,7 @@
   color: #2121214d;
 }
 
-.modal__submit-btn {
+.modal__submit-btn2 {
   appearance: none;
   border: 1px solid #212121;
   border-radius: 8px;
@@ -135,6 +135,37 @@
   height: 52px;
   background: #ffffff;
   color: #212121;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+.modal__submit-btn2:hover {
+  cursor: pointer;
+  appearance: none;
+  border: 1px solid #212121;
+  border-radius: 8px;
+  width: 156px;
+  height: 52px;
+  background: #212121;
+  color: #ffffff;
+}
+
+.modal__submit-btn {
+  appearance: none;
+  border: none;
+  border-radius: 8px;
+  width: 156px;
+  height: 52px;
+  background: #212121;
+  color: #fcf5e5;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+.modal__submit-btn:hover {
+  cursor: pointer;
+  background: #212121;
+  opacity: 80%;
 }
 
 .modal__delete-btn {
@@ -153,17 +184,6 @@
 .modal__delete-btn:hover {
   cursor: pointer;
   background-color: #ff3333;
-}
-
-.modal__submit-btn:hover {
-  cursor: pointer;
-  appearance: none;
-  border: 1px solid #212121;
-  border-radius: 8px;
-  width: 156px;
-  height: 52px;
-  background: #212121;
-  color: #ffffff;
 }
 
 .modal__image-container {
@@ -252,6 +272,9 @@
     width: 100%;
   }
   .modal__submit-btn {
+    width: 100%;
+  }
+  .modal__submit-btn2 {
     width: 100%;
   }
   .modal__close-btn {

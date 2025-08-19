@@ -50,7 +50,7 @@ const cardTemplate = document
   .content.querySelector(".card");
 const DeleteModal = document.querySelector("#delete-modal");
 const DeleteBtn = document.querySelector(".modal__delete-btn");
-const CancelBtn = DeleteModal.querySelector(".modal__submit-btn");
+const CancelBtn = DeleteModal.querySelector(".modal__submit-btn2");
 const CloseBtnDelete = document.querySelector(".modal__close-btn-position");
 
 //funcationality added to close button
