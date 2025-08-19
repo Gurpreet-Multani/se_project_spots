@@ -18,6 +18,7 @@ This webpage is deployed to GitHub Pages
 
 ## Will update
 
-will update this link
+Working on this right now
+Spots final steps
 
 - [Deployment Link](https://gurpreet-multani.github.io/se_project_spots/)
