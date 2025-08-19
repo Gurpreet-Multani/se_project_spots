@@ -3,11 +3,57 @@
   padding: 34px 0 20px;
   border-bottom: 1px rgba(33, 33, 33, 0.4) solid;
 }
-.profile__avatar {
+.profile__avatar-wrapper {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
   height: 190px;
   width: 190px;
   margin-right: 20px;
+}
+.profile__avatar {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
   border-radius: 10px;
+  z-index: 1;
+}
+.profile__avatar-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  font-family: poppins, Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 20px; /* Adjust this value as needed to fine-tune the position */
+  gap: 8px; /* Adds space between the icon and the text */
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.profile__avatar-btn::after {
+  content: "Edit Avatar";
+}
+
+.profile__avatar-wrapper:hover {
+  opacity: 50%;
+}
+.profile__avatar-btn:hover {
+  opacity: 100%;
+}
+
+.profile__avatar-btn img {
+  margin-bottom: 0; /* Remove the bottom margin on the image */
 }
 .profile__column {
   display: flex;
@@ -49,7 +95,6 @@
 .profile__edit-btn:hover {
   opacity: 100%;
 }
-
 .profile__add-btn {
   cursor: pointer;
   margin-left: auto;
@@ -111,5 +156,32 @@
 
   .profile__edit-btn {
     justify-content: center;
+  }
+
+  .profile__avatar-btn {
+    opacity: 40%;
+    width: 23px;
+    height: 23px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    left: 100px;
+    top: 50px;
+  }
+  .Profile__avatar-img {
+    opacity: 100%;
+  }
+
+  .profile__avatar-btn img {
+    position: absolute;
+  }
+
+  .profile__avatar-btn::after {
+    content: "";
   }
 }

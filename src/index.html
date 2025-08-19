@@ -20,11 +20,24 @@
       </header>
       <main class="content">
         <section class="profile page__section">
-          <img
-            src="<%=require('./images/avatar.jpg')%>"
-            alt="Bessie Coleman jpg"
-            class="profile__avatar"
-          />
+          <!-- Edit Avatar Profile Button -->
+          <div class="profile__avatar-container">
+            <div class="profile__avatar-wrapper">
+              <img
+                src="<%=require('./images/avatar.jpg')%>"
+                alt="Bessie Coleman jpg"
+                class="profile__avatar"
+              />
+              <!-- edit the button to open a modal  -->
+              <button type="button" class="profile__avatar-btn">
+                <img
+                  src="<%=require('./images/PencilAvatar.svg')%>"
+                  alt="Pencil icon"
+                  class="Profile__avatar-img"
+                />
+              </button>
+            </div>
+          </div>
           <div class="profile__column">
             <h1 class="profile__name">Bessie Coleman</h1>
             <p class="profile__description">Civil Aviator</p>
@@ -162,5 +175,47 @@
       </div>
     </div>
     <script type="module" src="./scripts/index.js"></script>
+    <!-- Are you Sure delete modal -->
+    <div class="modal" id="delete-modal">
+      <div class="modal__container modal__container-resize">
+        <!-- Edit the close buttom aka reposition and add style -->
+        <button type="button" class="modal__close-btn-position">
+          <img src="<%=require('./images/x_iconLogo.svg')%>" alt="x-icon" />
+        </button>
+        <h3 class="modal__title modal__title-Postion">
+          Are you sure you want to delete this image?
+        </h3>
+        <form class="modal__form_Delete" id="delete-form">
+          <!-- each button has its own class for color and hover effect -->
+          <button type="submit" class="modal__delete-btn">Delete</button>
+          <button type="button" class="modal__submit-btn">Cancel</button>
+        </form>
+      </div>
+    </div>
+    <!-- Edit profile avatar Modal -->
+    <div class="modal" id="modal__avatar">
+      <div class="modal__container">
+        <button type="button" class="modal__close-btn">
+          <img src="<%=require('./images/x_iconLogo.svg')%>" alt="x-icon" />
+        </button>
+        <h2 class="modal__title">Edit profile avatar</h2>
+        <form class="modal__form">
+          <label for="card-image-input" class="modal__label">
+            Profile Picture
+            <input
+              id="Avatar-image-input"
+              type="url"
+              class="modal__input"
+              placeholder="Paste the link to an image"
+              required
+            />
+            <span id="card-image-input-error" class="modal__error"></span>
+          </label>
+          <button type="submit" class="modal__submit-btn submit-avatar-btn">
+            Save
+          </button>
+        </form>
+      </div>
+    </div>
   </body>
 </html>
