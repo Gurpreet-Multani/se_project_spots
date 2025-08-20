@@ -3,11 +3,58 @@
   padding: 34px 0 20px;
   border-bottom: 1px rgba(33, 33, 33, 0.4) solid;
 }
-.profile__avatar {
+.profile__avatar-wrapper {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
   height: 190px;
   width: 190px;
   margin-right: 20px;
+}
+.profile__avatar {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
   border-radius: 10px;
+  z-index: 1;
+}
+.profile__avatar-btn {
+  align-items: flex-end;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  font-family: poppins, Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  gap: 8px;
+  height: 100%;
+  justify-content: center;
+  left: 0;
+  opacity: 0;
+  padding-bottom: 20px;
+  position: absolute;
+  top: 0;
+  transition: opacity 0.3s ease-in-out;
+  width: 100%;
+}
+
+.profile__avatar-btn:hover {
+  opacity: 1;
+}
+
+.profile__avatar-btn::after {
+  content: "Edit Avatar";
+}
+
+.profile__avatar-wrapper:hover {
+  opacity: 50%;
+}
+
+.profile__avatar-btn img {
+  margin-bottom: 0; /* Remove the bottom margin on the image */
 }
 .profile__column {
   display: flex;
@@ -49,7 +96,6 @@
 .profile__edit-btn:hover {
   opacity: 100%;
 }
-
 .profile__add-btn {
   cursor: pointer;
   margin-left: auto;
@@ -111,5 +157,42 @@
 
   .profile__edit-btn {
     justify-content: center;
+  }
+
+  .profile__avatar-btn {
+    opacity: 40%;
+    width: 23px;
+    height: 23px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    top: 52px;
+    left: 52px;
+  }
+  .Profile__avatar-img {
+    opacity: 100%;
+  }
+
+  .profile__avatar-btn img {
+    position: absolute;
+  }
+
+  .profile__avatar-btn::after {
+    content: "";
+  }
+
+  .profile__avatar-wrapper {
+    max-width: 80px;
+    max-height: 80px;
+  }
+
+  .profile__avatar-container {
+    max-width: 80px;
+    max-height: 80px;
   }
 }
