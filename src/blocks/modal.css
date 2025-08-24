@@ -277,6 +277,11 @@
   .modal__submit-btn2 {
     width: 100%;
   }
+
+  .modal__delete-btn {
+    width: 100%;
+  }
+
   .modal__close-btn {
     top: 12px;
     right: 12px;
